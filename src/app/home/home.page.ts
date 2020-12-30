@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
-import { MenuComponent } from '../menu/menu.component';
 import { Router } from '@angular/router';
 
 @Component({
