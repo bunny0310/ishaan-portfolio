@@ -1,20 +1,159 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar style="--background: #ffa64d !important; --color: white !important">
     <ion-title>
-      Blank
+        <ion-icon name="cube"></ion-icon> Ishaan's portfolio
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openURL('https://www.linkedin.com/in/ishaan-khurana-46968679/')">
+          <ion-icon name="logo-linkedin"></ion-icon>
+      </ion-button>
+      <ion-button (click)="openURL('http://github.com/bunny0310')">
+          <ion-icon name="logo-github"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+<ion-content [fullscreen]="true" style="">
+    <ion-fab vertical="top" horizontal="start" slot="fixed">
+        <ion-fab-button style="--background:#ffa64d ">
+            <ion-icon name="menu"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="bottom">
+                <ion-button (click)="navigateSection(p1)" style="--background:#ffa64d ">
+                    iMessage simulation
+                </ion-button>
+                <ion-button style="--background:#ffa64d " (click)="navigateSection(p0)">
+                        Introduction about me
+                    </ion-button>
+              </ion-fab-list>
+      </ion-fab>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <section #p0 style="height: 100%">
+    <ion-card style="height: auto"> 
+        <ion-card-header>
+                <ion-item lines="none">
+                    <ion-avatar>
+                        <img src="assets/profile.jpeg">
+                      </ion-avatar>
+                    <ion-card-title>Ishaan Khurana</ion-card-title>
+                </ion-item>
+                <ion-item>
+                    <ion-card-subtitle>Get rocks off assimilating eclectic mix of knowledge, inundated with zest, have a penchant for romantic novels</ion-card-subtitle>
+                </ion-item>
+        </ion-card-header>
+    
+      <ion-card-content>
+                  I'm a junior pursuing computer science at University of Massachusetts Amherst with 3 months of industry experience. I'm unduly zealous about leveraging my software engineering skills to make a substantial contribution to the economy and the society.
+  
+                  My objective in life is to develop robust and scalable products that have a real-life impact. My principal interests encompass back end development and system design with a carve out for API integrations.
+                  
+                  I interned at Kuebix for the summer of 2020 where I worked with a scrum team in an agile environment and contributed directly to their different Java SpringBoot/Salesforce based client softwares by working closely with my colleagues and the stakeholders and getting my changes pushed to production. I’d be joining Ability Network, an Inovalon Company next year as a Software Engineer Intern.
+                  
+                  I’ve put my backend development skills to use by working on a host of NodeJS and Java projects over the last year. Check out my github profile on http://github.com/bunny0310
+                  
+                  Outside of work, I follow US politics fervently and have been looking into getting back into ballroom dancing. I like to read romance in my free time.
+                  
+                  Feel free to reach out to me! 
+      </ion-card-content>
+    </ion-card>
+  </section>
+  <section #p1 style="height: 100%">
+    <ion-card style="height: auto"> 
+        <ion-card-header>
+                <ion-item lines="none">
+                    <ion-card-title>iMessage simulation</ion-card-title>
+                </ion-item>
+                <ion-item>
+                    <ion-card-subtitle><b>Languages & technologies used: </b> Python, Flask REST API, MySQL, Ionic/Angular, SocketIO</ion-card-subtitle>
+                </ion-item>
+        </ion-card-header>
+    
+      <ion-card-content>
+          <div class="container">
+            <img class="image" src="assets/chat-application.jpeg" style="border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <div class="middle">
+                    <ion-button style="--background: #ffa64d " (click)="openURL('https://github.com/bunny0310/Facebook-Messenger-Simulation')">
+                        <ion-icon slot="start" name="logo-github"></ion-icon>
+                        Click here to view the code
+                    </ion-button>
+            </div>
+        </div>
+          <ion-row>
+              <ion-col>
+                <section>
+                    There couldn't have been a more resourceful way for me to spend time during a stagerring 20 hours journey from Boston to Honolulu
+                    than to chart out the data models for a chat application system design project.
+                </section>
+                <section>
+                    I watched a few videos and went through a couple articles as I struggled to keep my eyes open during the 9 hours layover at Vegas.
+                    I optimized my moring time before I headed out for the day by coding the backend in Python/Flask incrementally despite being walloped by 
+                    various setbacks around data modelling in Flask. Well I wouldn't be so hard on myself about that, Python has just made a debut on my Github.
+                    By the time I got back to Massachusetts, I had some rudimentary functionalities ready and things were looking fine on the data modelling front.
+                </section>
+                <section>
+                    Next step in the process was to lay out a frontend so that people who think of 'Postman' as the mail delivery guy can use my app.
+                    I initially coded some grotesque stuff in Angular but eventually switched to Ionic once I learned all the ins and outs about it. 
+                    What's unprecented for me was what web sockets are and how to integrate them in my application. It took me a while to get my head
+                    wrapped around this novel concept and before I knew it, my backend was cluttered with tons of socket emit requests.
+                </section>
+                <section>
+                    After 30 days of relentlessly pouring in the efforts, it all added up and the final product blew me away. I decided not to deploy
+                    it to Heroku since their ClearDB MySQL addon is crappy and my application relies heavily on web sockets and MySQL connection. My work
+                    can still be accessed on Github.
+                </section>
+              </ion-col>
+          </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </section>
 </ion-content>
+
+<style>
+    section {
+        margin-bottom: 10px;
+    }
+    section {
+        text-indent: 20px
+    }
+    .container {
+        position: relative;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .image {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        max-height: 300px;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+      }
+      
+      .middle {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%)
+      }
+      
+      .container:hover .image {
+        opacity: 0.3;
+      }
+      
+      .container:hover .middle {
+        opacity: 1;
+      }
+      
+      .text {
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        padding: 16px 32px;
+      }
+</style>

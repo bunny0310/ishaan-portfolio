@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
+import { MenuComponent } from '../menu/menu.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,20 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private popoverController: PopoverController, private router: Router) {}
+  async presentPopover(ev: any) {
+    const popover = await this.popoverController.create({
+      component: MenuComponent,
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
+  }
 
+  openURL(url) {
+    window.open(url);
+  }
+  navigateSection(id) {
+    id.scrollIntoView({behavior: 'smooth'});
+  }
 }
