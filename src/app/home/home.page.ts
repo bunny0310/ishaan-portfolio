@@ -10,14 +10,6 @@ import { Router } from '@angular/router';
 export class HomePage {
 
   constructor(private popoverController: PopoverController, private router: Router) {}
-  async presentPopover(ev: any) {
-    const popover = await this.popoverController.create({
-      component: MenuComponent,
-      event: ev,
-      translucent: true
-    });
-    return await popover.present();
-  }
 
   openURL(url) {
     window.open(url);
